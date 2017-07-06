@@ -167,7 +167,7 @@
            checkwin('O');
          }
          function Orandomplay(){
-                var randomNumber=Math.floor((Math.random()*9)+1);
+              var randomNumber=Math.floor((Math.random()*9)+1);
              if(painted[randomNumber-1]==false)
              {
                 var randomSquare=("canvasNumber"+randomNumber);
@@ -175,8 +175,6 @@
              }
              else
                  Orandomplay();
-
-            }
          }
           function Oplaying(can){
                 c=document.getElementById(can);
