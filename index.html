@@ -35,33 +35,30 @@
               }  
            }
            function canvasclicked(canvasNumber){
-            theCanvas="canvas"+canvasNumber;
-            c=document.getElementById(theCanvas);
-            cxt=c.getcontext("2d");
-            if(painted[canvasNumber-1]==false)
-            {
-                if(turn%2==0){
-                    content[canvasNumber-1]='X';
+                theCanvas="canvas"+canvasNumber;
+                c=document.getElementById(theCanvas);
+                cxt=c.getcontext("2d");
+                if(painted[canvasNumber-1]==false)
+                {
+                    if(turn%2==0){
+                        content[canvasNumber-1]='X';
+                        turn++;
+                        painted[canvasNumber-1]=true;
+                        squaresFilled++;
+                        checkwin(content[canvasNumber-1]);
+                        Oplay();
+                    }
+                    else
+                    alert("that space is already occupied");
+
+                    if(squaresFilled==9){
+                        alert("Game is over");
+                        location.reload(true);
+                    }
                 }
-                else{
-                    Oplay();
-                    content[canvasNumber-1]='O';
-                }
-                turn++;
-                painted[canvasNumber-1]==true;
-                squaresFilled++;
-                checkwin(content[canvasNumber-1]);
-                if(squaresFilled==9){
-                    alert("Game is over");
-                    location.reload(true);
-                }
-            }
-            else{
-                alert("that space is already occupied");
-            }
-           }
+           };
            function Oplay(){
-            win123_sq3=(sq1.'X'&&sq2.'X'||sq1.'O'&&sq2.'O'&&!(sq3.'played'))
+            win123_sq3=(content[sq1]=='X'&&content[sq2]=='X'||content[sq1]=='O'&&content[sq2]=='O'&&content[sq3]==''))
             win123_sq2=(sq1.'X'&&sq3.'X'||sq1.'O'&&sq3.'O'&&!(sq2.'played'))
             win123_sq1=(sq2.'X'&&sq3.'X'||sq2.'O'&&sq3.'O'&&!(sq1.'played'))
 
