@@ -175,8 +175,15 @@
 
             }
          }
-
-
+          function Oplaying(){
+              
+                cxt.beginPath();
+                    cxt.arc(50,50,40,0,Math.PI*2,true);
+                    cxt.lineWidth=5;
+                    cxt.strokeStyle="white";
+                    cxt.stroke();
+                    cxt.closePath();
+          }
            function checkwin(symbol){
              winningCombinations=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
              for(var a=0;a<winningCombinations.length;a++){
