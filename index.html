@@ -16,85 +16,189 @@
         var squaresFilled = 0;
         var w;
         var y;
-        var user;
-        var computer;
+        var sq1=canvas1;
+        var sq2=canvas2;
+        var sq3=canvas3;
+        var sq4=canvas4;
+        var sq5=canvas5;
+        var sq6=canvas6;
+        var sq7=canvas7;
+        var sq8=canvas8;
+        var sq9=canvas9;
+        var win=false;
         window.onload=function(){
-            
-            painted = new Array();
-            content = new Array();
-            winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-
-            for(var l = 0; l <= 8; l++){
-            painted[l] = false;
-            content[l]='';
-            }
-        }
-
-        function canvasClicked(canvasNumber){
-            theCanvas = "canvas"+canvasNumber;
-            c = document.getElementById(theCanvas);
-            cxt = c.getContext("2d");
-
-            if(painted[canvasNumber-1] ==false){
-                if(turn%2==0 %% turn==computer){
-                    cxt.beginPath();
-                    cxt.moveTo(10,10);
-                    cxt.lineTo(90,90);
-                    cxt.moveTo(90,10);
-                    cxt.lineTo(10,90);
-                    cxt.lineWidth=5;
-                    cxt.strokeStyle="white";
-                    cxt.stroke();
-                    cxt.closePath();
-                 computer.random(content[canvasNumber-1])='X';
-                   turn=user;
+            painted=new array();
+            content=new array();
+            for(var l=0;l<=8;l++){
+                painted[l]=false;
+                content[l]='';
+              }  
+           }
+           function canvasclicked(canvasNumber){
+            theCanvas="canvas"+canvasNumber;
+            c=document.getElementById(theCanvas);
+            cxt=c.getcontext("2d");
+            if(painted[canvasNumber-1]==false)
+            {
+                if(turn%2==0){
+                    content[canvasNumber-1]='X';
                 }
-
                 else{
-                    if(turn==user)
-                    cxt.beginPath();
-                    cxt.arc(50,50,40,0,Math.PI*2,true);
-                    cxt.lineWidth=5;
-                    cxt.strokeStyle="white";
-                    cxt.stroke();
-                    cxt.closePath();
-                    content[canvasNumber-1] = 'O';
-                    
-
+                    Oplay();
+                    content[canvasNumber-1]='O';
                 }
-                  turn++;
-             painted[canvasNumber-1] = true;
+                turn++;
+                painted[canvasNumber-1]==true;
                 squaresFilled++;
-                checkForWinners(content[canvasNumber-1]);
-
-
+                checkwin(content[canvasNumber-1]);
                 if(squaresFilled==9){
-                    alert("THE GAME IS OVER!");
+                    alert("Game is over");
                     location.reload(true);
                 }
-            
             }
             else{
-                alert("THAT SPACE IS ALREADY OCCUPIED !!");
+                alert("that space is already occupied");
             }
+           }
+           function Oplay(){
+            win123_sq3=(sq1.'X'&&sq2.'X'||sq1.'O'&&sq2.'O'&&!(sq3.'played'))
+            win123_sq2=(sq1.'X'&&sq3.'X'||sq1.'O'&&sq3.'O'&&!(sq2.'played'))
+            win123_sq1=(sq2.'X'&&sq3.'X'||sq2.'O'&&sq3.'O'&&!(sq1.'played'))
 
-        }
-        function checkForWinners(symbol){
+            win456_sq6=(sq4.'X'&&sq5.'X'||sq4.'O'&&sq5.'O'&&!(sq6.'played'))
+            win456_sq5=(sq4.'X'&&sq6.'X'||sq4.'O'&&sq6.'O'&&!(sq5.'played'))
+            win456_sq4=(sq5.'X'&&sq6.'X'||sq5.'O'&&sq6.'O'&&!(sq4.'played'))
+
+            win789_sq9=(sq7.'X'&&sq8.'X'||sq7.'O'&&sq8.'O'&&!(sq9.'played'))
+            win789_sq8=(sq7.'X'&&sq9.'X'||sq7.'O'&&sq9.'O'&&!(sq8.'played'))
+            win789_sq7=(sq8.'X'&&sq9.'X'||sq8.'O'&&sq9.'O'&&!(sq7.'played'))
             
-            for(var a = 0; a < winningCombinations.length; a++){
-            if(content[winningCombinations[a][0]]==symbol&&content[winningCombinations[a][1]]== symbol&&content[winningCombinations[a][2]]==symbol){
-                alert(symbol+ " WON!");
-                playAgain();
+            win147_sq7=(sq1.'X'&&sq4.'X'||sq1.'O'&&sq4.'O'&&!(sq7.'played'))
+            win147_sq4=(sq1.'X'&&sq7.'X'||sq1.'O'&&sq7.'O'&&!(sq4.'played'))
+            win147_sq1=(sq4.'X'&&sq7.'X'||sq4.'O'&&sq7.'O'&&!(sq1.'played'))
+
+
+            win528_sq8=(sq5.'X'&&sq2.'X'||sq5.'O'&&sq2.'O'&&!(sq8.'played'))
+            win528_sq2=(sq5.'X'&&sq8.'X'||sq5.'O'&&sq8.'O'&&!(sq2.'played'))
+            win528_sq5=(sq2.'X'&&sq8.'X'||sq2.'O'&&sq8.'O'&&!(sq5.'played'))
+
+            win693_sq3=(sq6.'X'&&sq9.'X'||sq6.'O'&&sq9.'O'&&!(sq3.'played'))
+            win693_sq9=(sq6.'X'&&sq3.'X'||sq6.'O'&&sq3.'O'&&!(sq9.'played'))
+            win693_sq6=(sq9.'X'&&sq3.'X'||sq9.'O'&&sq3.'O'&&!(sq6.'played'))
+
+            win159_sq9=(sq1.'X'&&sq5.'X'||sq1.'O'&&sq5.'O'&&!(sq9.'played'))
+            win159_sq5=(sq1.'X'&&sq9.'X'||sq1.'O'&&sq9.'O'&&!(sq5.'played'))
+            win159_sq1=(sq5.'X'&&sq9.'X'||sq5.'O'&&sq9.'O'&&!(sq1.'played'))
+
+            win573_sq3=(sq5.'X'&&sq7.'X'||sq5.'O'&&sq7.'O'&&!(sq3.'played'))
+            win573_sq7=(sq5.'X'&&sq3.'X'||sq5.'O'&&sq3.'O'&&!(sq7.'played'))
+            win573_sq5=(sq7.'X'&&sq3.'X'||sq7.'O'&&sq3.'O'&&!(sq5.'played'))
+           if(win123_sq3){
+             Oplaying(sq3)
+           } else if(win123_sq2){
+            Oplaying(sq2)
+           }else if(win123_sq1){
+            Oplaying(sq1)
+           }
+           
+           else if(win456_sq6){
+            Oplaying(sq6)
+           }else if(win456_sq5){
+            Oplaying(sq5)
+           }else if(win456_sq4){
+            Oplaying(sq4)
+           }
+           
+
+           else if(win789_sq9){
+            Oplaying(sq9)
+           }else if(win789_sq8){
+            Oplaying(sq8)
+           }else if(win789_sq7){
+            Oplaying(sq7)
+           }
+
+
+
+           else if(win147_sq7){
+            Oplaying(sq7)
+           }else if(win147_sq4){
+            Oplaying(sq4)
+           }else if(win147_sq1){
+            Oplaying(sq1)
+           }
+
+
+
+           else if(win528_sq8){
+            Oplaying(sq8)
+           }else if(win528_sq2){
+            Oplaying(sq2)
+           }else if(win528_sq5){
+            Oplaying(sq5)
+           }
+
+
+           else if(win693_sq3){
+            Oplaying(sq3)
+           }else if(win693_sq9){
+            Oplaying(sq9)
+           }else if(win693_sq6){
+            Oplaying(sq6)
+           }
+
+
+           else if(win159_sq9){
+            Oplaying(sq9)
+           }else if(win159_sq5){
+            Oplaying(sq5)
+         
+           }else if(win159_sq1){
+            Oplaying(sq1)
+           }
+
+
+           else if(win573_sq3){
+            Oplaying(sq3)
+           }else if(win573_sq7){
+            Oplaying(sq7)
+           }else if(win573_sq5){
+            Oplaying(sq5)
+           }         
+           else{
+            Orandomplay();
+           }
+           checkwin();
+         }
+         function Orandomplay(){
+            for(var i=0;i<10;i++){
+                var randomNumber=Math.floor((Math.random()*9)+1);
+                var randomSquare=("canvasNumber"+randomNumber);
+                Oplay(randomSquare);
+
             }
-            else
-            if(!content[winningCombinations[a][0]]==symbol && !content[winningCombinations[a][1]]== symbol && !content[winningCombinations[a][2]]==symbol){
-                alert(symbol+symbol+"Draw");
-                playAgain();
-            }
-            }
+         }
+
+
+           function checkwin(){
+             winningCombinations=[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6];
+             for(var a=0;a<winningCombinations.length;a++){
+                if(content[winningCombinations[a][0]]==symbol && content[winningCombinations[a][1]]==symbol &&content[winningCombinations[a][2]]==symbol){
+                  winalert();
 
         }
-
+         }
+           } 
+             function winalert(symbol){
+               win=true;
+               if(symbol=='X'){
+                alert("X won");
+            }
+            else{
+                alert("O won");
+            }
+            playAgain();
+         }
         function playAgain(){
             y=confirm("PLAY AGAIN?");
             if(y==true){
@@ -111,7 +215,7 @@
     <body>
         <h1> <span style="color:blue">Tic</span>-<span style="color:white">Tac</span>-<span style="color:red">Toe</span> </h1>
         <div id ="box"  width="300" height="300" align="center">
-            <canvas id = "canvas1"  width="100" height="100" style="border:10px solid blue" onclick="canvasClicked(1)"></canvas>
+            <canvas id = "canvas1"  width="100" height="100" style="border:10px solid yellow" onclick="canvasClicked(1)"></canvas>
             <canvas id = "canvas2"  width="100" height="100" style="border:10px solid yellow" onclick="canvasClicked(2)"></canvas>
             <canvas id = "canvas3"  width="100" height="100" style="border:10px solid blue" onclick="canvasClicked(3)"></canvas><br/>
             <canvas id = "canvas4"  width="100" height="100" style="border:10px solid yellow" onclick="canvasClicked(4)"></canvas>
