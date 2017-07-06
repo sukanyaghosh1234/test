@@ -42,6 +42,15 @@
                 {
                     if(turn%2==0){
                         content[canvasNumber-1]='X';
+                        cxt.beginPath();
+                        cxt.moveTo(10,10);
+                        cxt.lineTo(90,90);
+                        cxt.moveTo(90,10);
+                        cxt.lineTo(10,90);
+                        cxt.lineWidth=5;
+                        cxt.strokeStyle="white";
+                        cxt.stroke();
+                        cxt.closePath();
                         turn++;
                         painted[canvasNumber-1]=true;
                         squaresFilled++;
