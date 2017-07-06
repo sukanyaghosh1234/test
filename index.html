@@ -184,6 +184,8 @@
                 cxt.closePath();
                 turn++;
                 squaresFilled++;
+                content[Number(can.substr(6))-1]='O';
+                painted[Number(can.substr(6))-1]=true;
               //change content of required canvas!
           }
            function checkwin(symbol){
