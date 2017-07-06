@@ -59,37 +59,37 @@
            };
            function Oplay(){
             win123_sq3=(content[sq1]=='X'&&content[sq2]=='X'||content[sq1]=='O'&&content[sq2]=='O'&&content[sq3]==''))
-            win123_sq2=(sq1.'X'&&sq3.'X'||sq1.'O'&&sq3.'O'&&!(sq2.'played'))
-            win123_sq1=(sq2.'X'&&sq3.'X'||sq2.'O'&&sq3.'O'&&!(sq1.'played'))
+            win123_sq2=(content[sq1]=='X'&&content[sq3]=='X'||content[sq1]=='O'&&content[sq3]=='O'&&content[sq2]==''))
+            win123_sq1=(content[sq2]=='X'&&content[sq3]=='X'||content[sq2]=='O'&&content[sq3]=='O'&&content[sq1]==''))
 
-            win456_sq6=(sq4.'X'&&sq5.'X'||sq4.'O'&&sq5.'O'&&!(sq6.'played'))
-            win456_sq5=(sq4.'X'&&sq6.'X'||sq4.'O'&&sq6.'O'&&!(sq5.'played'))
-            win456_sq4=(sq5.'X'&&sq6.'X'||sq5.'O'&&sq6.'O'&&!(sq4.'played'))
+            win456_sq6=(content[sq4]=='X'&&content[sq5]=='X'||content[sq4]=='O'&&content[sq5]=='O'&&content[sq6]==''))
+            win456_sq5=(content[sq4]=='X'&&content[sq6]=='X'||content[sq4]=='O'&&content[sq6]=='O'&&content[sq5]==''))
+            win456_sq4=(content[sq5]=='X'&&content[sq6]=='X'||content[sq5]=='O'&&content[sq6]=='O'&&content[sq4]==''))
 
-            win789_sq9=(sq7.'X'&&sq8.'X'||sq7.'O'&&sq8.'O'&&!(sq9.'played'))
-            win789_sq8=(sq7.'X'&&sq9.'X'||sq7.'O'&&sq9.'O'&&!(sq8.'played'))
-            win789_sq7=(sq8.'X'&&sq9.'X'||sq8.'O'&&sq9.'O'&&!(sq7.'played'))
+            win789_sq9=(content[sq7]=='X'&&content[sq8]=='X'||content[sq7]=='O'&&content[sq8]=='O'&&content[sq9]==''))
+            win789_sq8=(content[sq7]=='X'&&content[sq9]=='X'||content[sq7]=='O'&&content[sq9]=='O'&&content[sq8]==''))
+            win789_sq7=(content[sq8]=='X'&&content[sq9]=='X'||content[sq8]=='O'&&content[sq9]=='O'&&content[sq7]==''))
             
-            win147_sq7=(sq1.'X'&&sq4.'X'||sq1.'O'&&sq4.'O'&&!(sq7.'played'))
-            win147_sq4=(sq1.'X'&&sq7.'X'||sq1.'O'&&sq7.'O'&&!(sq4.'played'))
-            win147_sq1=(sq4.'X'&&sq7.'X'||sq4.'O'&&sq7.'O'&&!(sq1.'played'))
+            win147_sq7=(content[sq1]=='X'&&content[sq4]=='X'||content[sq1]=='O'&&content[sq4]=='O'&&content[sq7]==''))
+            win147_sq4=(content[sq1]=='X'&&content[sq7]=='X'||content[sq1]=='O'&&content[sq7]=='O'&&content[sq4]==''))
+            win147_sq1=(content[sq4]=='X'&&content[sq7]=='X'||content[sq4]=='O'&&content[sq7]=='O'&&content[sq1]==''))
 
 
-            win528_sq8=(sq5.'X'&&sq2.'X'||sq5.'O'&&sq2.'O'&&!(sq8.'played'))
-            win528_sq2=(sq5.'X'&&sq8.'X'||sq5.'O'&&sq8.'O'&&!(sq2.'played'))
-            win528_sq5=(sq2.'X'&&sq8.'X'||sq2.'O'&&sq8.'O'&&!(sq5.'played'))
+            win528_sq8=(content[sq5]=='X'&&content[sq2]=='X'||content[sq5]=='O'&&content[sq2]=='O'&&content[sq8]==''))
+            win528_sq2=(content[sq5]=='X'&&content[sq8]=='X'||content[sq5]=='O'&&content[sq8]=='O'&&content[sq2]==''))
+            win528_sq5=(content[sq2]=='X'&&content[sq8]=='X'||content[sq2]=='O'&&content[sq8]=='O'&&content[sq5]==''))
 
-            win693_sq3=(sq6.'X'&&sq9.'X'||sq6.'O'&&sq9.'O'&&!(sq3.'played'))
-            win693_sq9=(sq6.'X'&&sq3.'X'||sq6.'O'&&sq3.'O'&&!(sq9.'played'))
-            win693_sq6=(sq9.'X'&&sq3.'X'||sq9.'O'&&sq3.'O'&&!(sq6.'played'))
+            win693_sq3=(content[sq6]=='X'&&content[sq9]=='X'||content[sq6]=='O'&&content[sq9]=='O'&&content[sq3]==''))
+            win693_sq9=(content[sq6]=='X'&&content[sq3]=='X'||content[sq6]=='O'&&content[sq3]=='O'&&content[sq9]==''))
+            win693_sq6=(content[sq9]=='X'&&content[sq3]=='X'||content[sq9]=='O'&&content[sq3]=='O'&&content[sq6]==''))
 
-            win159_sq9=(sq1.'X'&&sq5.'X'||sq1.'O'&&sq5.'O'&&!(sq9.'played'))
-            win159_sq5=(sq1.'X'&&sq9.'X'||sq1.'O'&&sq9.'O'&&!(sq5.'played'))
-            win159_sq1=(sq5.'X'&&sq9.'X'||sq5.'O'&&sq9.'O'&&!(sq1.'played'))
+            win159_sq9=(content[sq1]=='X'&&content[sq5]=='X'||content[sq1]=='O'&&content[sq5]=='O'&&content[sq9]==''))
+            win159_sq5=(content[sq1]=='X'&&content[sq9]=='X'||content[sq1]=='O'&&content[sq9]=='O'&&content[sq5]==''))
+            win159_sq1=(content[sq5]=='X'&&content[sq9]=='X'||content[sq5]=='O'&&content[sq9]=='O'&&content[sq1]==''))
 
-            win573_sq3=(sq5.'X'&&sq7.'X'||sq5.'O'&&sq7.'O'&&!(sq3.'played'))
-            win573_sq7=(sq5.'X'&&sq3.'X'||sq5.'O'&&sq3.'O'&&!(sq7.'played'))
-            win573_sq5=(sq7.'X'&&sq3.'X'||sq7.'O'&&sq3.'O'&&!(sq5.'played'))
+            win573_sq3=(content[sq5]=='X'&&content[sq7]=='X'||content[sq5]=='O'&&content[sq7]=='O'&&content[sq3]==''))
+            win573_sq7=(content[sq5]=='X'&&content[sq3]=='X'||content[sq5]=='O'&&content[sq3]=='O'&&content[sq7]==''))
+            win573_sq5=(content[sq7]=='X'&&content[sq3]=='X'||content[sq7]=='O'&&content[sq3]=='O'&&content[sq5]==''))
            if(win123_sq3){
              Oplaying(sq3)
            } else if(win123_sq2){
