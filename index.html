@@ -16,15 +16,15 @@
         var squaresFilled = 0;
         var w;
         var y;
-        var sq1=canvas1;
-        var sq2=canvas2;
-        var sq3=canvas3;
-        var sq4=canvas4;
-        var sq5=canvas5;
-        var sq6=canvas6;
-        var sq7=canvas7;
-        var sq8=canvas8;
-        var sq9=canvas9;
+        var sq1="canvas1";
+        var sq2="canvas2";
+        var sq3="canvas3";
+        var sq4="canvas4";
+        var sq5="canvas5";
+        var sq6="canvas6";
+        var sq7="canvas7";
+        var sq8="canvas8";
+        var sq9="canvas9";
         var win=false;
         window.onload=function(){
             painted=new array();
@@ -42,15 +42,6 @@
                 {
                     if(turn%2==0){
                         content[canvasNumber-1]='X';
-                        cxt.beginPath();
-                        cxt.moveTo(10,10);
-                        cxt.lineTo(90,90);
-                        cxt.moveTo(90,10);
-                        cxt.lineTo(10,90);
-                        cxt.lineWidth=5;
-                        cxt.strokeStyle="white";
-                        cxt.stroke();
-                        cxt.closePath();
                         turn++;
                         painted[canvasNumber-1]=true;
                         squaresFilled++;
@@ -67,109 +58,108 @@
                 }
            };
            function Oplay(){
-            win123_sq3=(content[sq1]=='X'&&content[sq2]=='X'||content[sq1]=='O'&&content[sq2]=='O'&&content[sq3]==''))
-            win123_sq2=(content[sq1]=='X'&&content[sq3]=='X'||content[sq1]=='O'&&content[sq3]=='O'&&content[sq2]==''))
-            win123_sq1=(content[sq2]=='X'&&content[sq3]=='X'||content[sq2]=='O'&&content[sq3]=='O'&&content[sq1]==''))
+            win123_sq3=(((content[sq1]=='X'&&content[sq2]=='X')||(content[sq1]=='O'&&content[sq2]=='O'))&&content[sq3]=='')
+            win123_sq2=(((content[sq1]=='X'&&content[sq3]=='X')||(content[sq1]=='O'&&content[sq3]=='O'))&&content[sq2]=='')
+            win123_sq1=(((content[sq2]=='X'&&content[sq3]=='X')||(content[sq2]=='O'&&content[sq3]=='O'))&&content[sq1]=='')
 
-            win456_sq6=(content[sq4]=='X'&&content[sq5]=='X'||content[sq4]=='O'&&content[sq5]=='O'&&content[sq6]==''))
-            win456_sq5=(content[sq4]=='X'&&content[sq6]=='X'||content[sq4]=='O'&&content[sq6]=='O'&&content[sq5]==''))
-            win456_sq4=(content[sq5]=='X'&&content[sq6]=='X'||content[sq5]=='O'&&content[sq6]=='O'&&content[sq4]==''))
+            win456_sq6=(((content[sq4]=='X'&&content[sq5]=='X')||(content[sq4]=='O'&&content[sq5]=='O'))&&content[sq6]=='')
+            win456_sq5=(((content[sq4]=='X'&&content[sq6]=='X')||(content[sq4]=='O'&&content[sq6]=='O'))&&content[sq5]=='')
+            win456_sq4=(((content[sq5]=='X'&&content[sq6]=='X')||(content[sq5]=='O'&&content[sq6]=='O'))&&content[sq4]=='')
 
-            win789_sq9=(content[sq7]=='X'&&content[sq8]=='X'||content[sq7]=='O'&&content[sq8]=='O'&&content[sq9]==''))
-            win789_sq8=(content[sq7]=='X'&&content[sq9]=='X'||content[sq7]=='O'&&content[sq9]=='O'&&content[sq8]==''))
-            win789_sq7=(content[sq8]=='X'&&content[sq9]=='X'||content[sq8]=='O'&&content[sq9]=='O'&&content[sq7]==''))
+            win789_sq9=(((content[sq7]=='X'&&content[sq8]=='X')||(content[sq7]=='O'&&content[sq8]=='O'))&&content[sq9]=='')
+            win789_sq8=(((content[sq7]=='X'&&content[sq9]=='X')||(content[sq7]=='O'&&content[sq9]=='O'))&&content[sq8]=='')
+            win789_sq7=(((content[sq8]=='X'&&content[sq9]=='X')||(content[sq8]=='O'&&content[sq9]=='O'))&&content[sq7]=='')
             
-            win147_sq7=(content[sq1]=='X'&&content[sq4]=='X'||content[sq1]=='O'&&content[sq4]=='O'&&content[sq7]==''))
-            win147_sq4=(content[sq1]=='X'&&content[sq7]=='X'||content[sq1]=='O'&&content[sq7]=='O'&&content[sq4]==''))
-            win147_sq1=(content[sq4]=='X'&&content[sq7]=='X'||content[sq4]=='O'&&content[sq7]=='O'&&content[sq1]==''))
+            win147_sq7=(((content[sq1]=='X'&&content[sq4]=='X')||(content[sq1]=='O'&&content[sq4]=='O'))&&content[sq7]=='')
+            win147_sq4=(((content[sq1]=='X'&&content[sq7]=='X')||(content[sq1]=='O'&&content[sq7]=='O'))&&content[sq4]=='')
+            win147_sq1=(((content[sq4]=='X'&&content[sq7]=='X')||(content[sq4]=='O'&&content[sq7]=='O'))&&content[sq1]=='')
 
 
-            win528_sq8=(content[sq5]=='X'&&content[sq2]=='X'||content[sq5]=='O'&&content[sq2]=='O'&&content[sq8]==''))
-            win528_sq2=(content[sq5]=='X'&&content[sq8]=='X'||content[sq5]=='O'&&content[sq8]=='O'&&content[sq2]==''))
-            win528_sq5=(content[sq2]=='X'&&content[sq8]=='X'||content[sq2]=='O'&&content[sq8]=='O'&&content[sq5]==''))
+            win528_sq8=(((content[sq5]=='X'&&content[sq2]=='X')||(content[sq5]=='O'&&content[sq2]=='O'))&&content[sq8]=='')
+            win528_sq2=(((content[sq5]=='X'&&content[sq8]=='X')||(content[sq5]=='O'&&content[sq8]=='O'))&&content[sq2]=='')
+            win528_sq5=(((content[sq2]=='X'&&content[sq8]=='X')||(content[sq2]=='O'&&content[sq8]=='O'))&&content[sq5]=='')
 
-            win693_sq3=(content[sq6]=='X'&&content[sq9]=='X'||content[sq6]=='O'&&content[sq9]=='O'&&content[sq3]==''))
-            win693_sq9=(content[sq6]=='X'&&content[sq3]=='X'||content[sq6]=='O'&&content[sq3]=='O'&&content[sq9]==''))
-            win693_sq6=(content[sq9]=='X'&&content[sq3]=='X'||content[sq9]=='O'&&content[sq3]=='O'&&content[sq6]==''))
+            win693_sq3=(((content[sq6]=='X'&&content[sq9]=='X')||(content[sq6]=='O'&&content[sq9]=='O'))&&content[sq3]=='')
+            win693_sq9=(((content[sq6]=='X'&&content[sq3]=='X')||(content[sq6]=='O'&&content[sq3]=='O'))&&content[sq9]=='')
+            win693_sq6=(((content[sq9]=='X'&&content[sq3]=='X')||(content[sq9]=='O'&&content[sq3]=='O'))&&content[sq6]=='')
 
-            win159_sq9=(content[sq1]=='X'&&content[sq5]=='X'||content[sq1]=='O'&&content[sq5]=='O'&&content[sq9]==''))
-            win159_sq5=(content[sq1]=='X'&&content[sq9]=='X'||content[sq1]=='O'&&content[sq9]=='O'&&content[sq5]==''))
-            win159_sq1=(content[sq5]=='X'&&content[sq9]=='X'||content[sq5]=='O'&&content[sq9]=='O'&&content[sq1]==''))
+            win159_sq9=(((content[sq1]=='X'&&content[sq5]=='X')||(content[sq1]=='O'&&content[sq5]=='O'))&&content[sq9]=='')
+            win159_sq5=(((content[sq1]=='X'&&content[sq9]=='X')||(content[sq1]=='O'&&content[sq9]=='O'))&&content[sq5]=='')
+            win159_sq1=(((content[sq5]=='X'&&content[sq9]=='X')||(content[sq5]=='O'&&content[sq9]=='O'))&&content[sq1]=='')
 
-            win573_sq3=(content[sq5]=='X'&&content[sq7]=='X'||content[sq5]=='O'&&content[sq7]=='O'&&content[sq3]==''))
-            win573_sq7=(content[sq5]=='X'&&content[sq3]=='X'||content[sq5]=='O'&&content[sq3]=='O'&&content[sq7]==''))
-            win573_sq5=(content[sq7]=='X'&&content[sq3]=='X'||content[sq7]=='O'&&content[sq3]=='O'&&content[sq5]==''))
+            win573_sq3=(((content[sq5]=='X'&&content[sq7]=='X')||(content[sq5]=='O'&&content[sq7]=='O'))&&content[sq3]=='')
+            win573_sq7=(((content[sq5]=='X'&&content[sq3]=='X')||(content[sq5]=='O'&&content[sq3]=='O'))&&content[sq7]=='')
+            win573_sq5=(((content[sq7]=='X'&&content[sq3]=='X')||(content[sq7]=='O'&&content[sq3]=='O'))&&content[sq5]=='')
            if(win123_sq3){
-             Oplaying(sq3)
+             Oplaying(sq3);
            } else if(win123_sq2){
-            Oplaying(sq2)
+            Oplaying(sq2);
            }else if(win123_sq1){
-            Oplaying(sq1)
+            Oplaying(sq1);
            }
            
            else if(win456_sq6){
-            Oplaying(sq6)
+            Oplaying(sq6);
            }else if(win456_sq5){
-            Oplaying(sq5)
+            Oplaying(sq5);
            }else if(win456_sq4){
-            Oplaying(sq4)
+            Oplaying(sq4);
            }
            
 
            else if(win789_sq9){
-            Oplaying(sq9)
+            Oplaying(sq9);
            }else if(win789_sq8){
-            Oplaying(sq8)
+            Oplaying(sq8);
            }else if(win789_sq7){
-            Oplaying(sq7)
+            Oplaying(sq7);
            }
 
 
 
            else if(win147_sq7){
-            Oplaying(sq7)
+            Oplaying(sq7);
            }else if(win147_sq4){
-            Oplaying(sq4)
+            Oplaying(sq4);
            }else if(win147_sq1){
-            Oplaying(sq1)
+            Oplaying(sq1);
            }
 
 
 
            else if(win528_sq8){
-            Oplaying(sq8)
+            Oplaying(sq8);
            }else if(win528_sq2){
-            Oplaying(sq2)
+            Oplaying(sq2);
            }else if(win528_sq5){
-            Oplaying(sq5)
+            Oplaying(sq5);
            }
 
 
            else if(win693_sq3){
-            Oplaying(sq3)
+            Oplaying(sq3);
            }else if(win693_sq9){
-            Oplaying(sq9)
+            Oplaying(sq9);
            }else if(win693_sq6){
-            Oplaying(sq6)
+            Oplaying(sq6);
            }
 
 
            else if(win159_sq9){
-            Oplaying(sq9)
+            Oplaying(sq9);
            }else if(win159_sq5){
-            Oplaying(sq5)
-         
+            Oplaying(sq5);
            }else if(win159_sq1){
-            Oplaying(sq1)
+            Oplaying(sq1);
            }
 
 
            else if(win573_sq3){
-            Oplaying(sq3)
+            Oplaying(sq3);
            }else if(win573_sq7){
-            Oplaying(sq7)
+            Oplaying(sq7);
            }else if(win573_sq5){
-            Oplaying(sq5)
+            Oplaying(sq5);
            }         
            else{
             Orandomplay();
@@ -177,21 +167,29 @@
            checkwin('O');
          }
          function Orandomplay(){
-            for(var i=0;i<10;i++){
-                var randomNumber=Math.floor((Math.random()*9)+1);
-                var randomSquare=("canvasNumber"+randomNumber);
-                Oplay(randomSquare);
-
-            }
+              var randomNumber=Math.floor((Math.random()*9)+1);
+             if(painted[randomNumber-1]==false)
+             {
+                var randomSquare=("canvas"+randomNumber);
+                Oplaying(randomSquare);
+             }
+             else
+                 Orandomplay();
          }
-          function Oplaying(){
-              
+          function Oplaying(can){
+                c=document.getElementById(can);
+                cxt=c.getcontext("2d");
                 cxt.beginPath();
-                    cxt.arc(50,50,40,0,Math.PI*2,true);
-                    cxt.lineWidth=5;
-                    cxt.strokeStyle="white";
-                    cxt.stroke();
-                    cxt.closePath();
+                cxt.arc(50,50,40,0,Math.PI*2,true);
+                cxt.lineWidth=5;
+                cxt.strokeStyle="white";
+                cxt.stroke();
+                cxt.closePath();
+                turn++;
+                squaresFilled++;
+                content[Number(can.substr(6))-1]='O';
+                painted[Number(can.substr(6))-1]=true;
+              //change content of required canvas!
           }
            function checkwin(symbol){
              winningCombinations=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
