@@ -211,6 +211,12 @@
          }
          }
           function Oplaying(canNum){
+                   if(squaresFilled==9){
+                      turn=0;
+                        checkDraw();
+                        alert("Game Over");
+                        location.reload(true);
+                    }
                console.log("computer");
                var can="canvas"+canNum;
                if(painted[canNum-1]==false){
