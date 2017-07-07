@@ -34,6 +34,13 @@
               }  
            }
            function canvasClicked(canvasNumber){
+               
+                    if(squaresFilled==9){
+                      turn=0;
+                        checkDraw();
+                        alert("Game Over");
+                        location.reload(true);
+                    }
                 theCanvas="canvas"+canvasNumber;
                 c=document.getElementById(theCanvas);
                 ctx=c.getContext("2d");
@@ -61,13 +68,6 @@
                 }
                     else 
                     alert("that space is already occupied");
-                
-                    if(squaresFilled==9){
-                      turn=0;
-                        checkDraw();
-                        alert("Game Over");
-                        location.reload(true);
-                    }
                 
            };
            function Oplay(){
