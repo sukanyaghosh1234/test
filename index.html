@@ -37,8 +37,8 @@
                
                     if(squaresFilled==9){
                       turn=0;
-                        checkDraw();
-                        alert("Game Over");
+   
+                       alert("Game Over");
                         location.reload(true);
                     }
                 theCanvas="canvas"+canvasNumber;
@@ -213,7 +213,7 @@
           function Oplaying(canNum){
                    if(squaresFilled==9){
                       turn=0;
-                        checkDraw();
+                       
                         alert("Game Over");
                         location.reload(true);
                     }
@@ -253,14 +253,7 @@
             }
             playAgain();
          }
-         function checkDraw(){
-          if(squaresFilled==9 && win==false){
-            alert("Draw");
-            location.reload(true);
-          }else{
-             playAgain();
-          }
-         }
+
         function playAgain(){
             win=true;
             turn=0;
