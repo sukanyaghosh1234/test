@@ -173,9 +173,9 @@
           function Oplaying(canNum){
                console.log("computer");
                var can="canvas"+canNum;
+               if(painted[canNum-1]==false){
                 c=document.getElementById(can);
                 ctx=c.getContext("2d");
-              if(painted[canNum-1]==false){
                 ctx.beginPath();
                 ctx.arc(50,50,40,0,Math.PI*2,true);
                 ctx.lineWidth=5;
