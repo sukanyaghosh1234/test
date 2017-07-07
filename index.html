@@ -54,9 +54,11 @@
                         painted[canvasNumber-1]=true;
                         squaresFilled++;
                         checkwin(content[canvasNumber-1]);
+                        if(win==false){
                         Oplay();
+                        }
                     }
-                    else
+                    else{
                     alert("that space is already occupied");
                     if(squaresFilled==9){
                         alert("Game is over");
