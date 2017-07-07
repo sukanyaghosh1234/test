@@ -172,14 +172,14 @@
          }
           function Oplaying(canNum){
                 can="canvas"+canNum;
-                c1=document.getElementById(can);
-                ctx1=c1.getContext("2d");
-                ctx1.beginPath();
-                ctx1.arc(50,50,40,0,Math.PI*2,true);
-                ctx1.lineWidth=5;
-                ctx1.strokeStyle="white";
-                ctx1.stroke();
-                ctx1.closePath();
+                c=document.getElementById(can);
+                ctx=c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(50,50,40,0,Math.PI*2,true);
+                ctx.lineWidth=5;
+                ctx.strokeStyle="white";
+                ctx.stroke();
+                ctx.closePath();
                 content[canNum-1]='O';
                 painted[canNum-1]=true;
                 turn++;
