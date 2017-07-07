@@ -59,11 +59,13 @@
                         }
                     }
                 }
-                    else
+                    else 
                     alert("that space is already occupied");
+                
                     if(squaresFilled==9){
-                        turn=0;
-                        alert("Game is over");
+                      turn=0;
+                        checkDraw();
+                        alert("Game Over");
                         location.reload(true);
                     }
                 
@@ -224,7 +226,6 @@
                 squaresFilled++;
               }
                 //checkwin('O');
-
           }
            function checkwin(symbol){
              winningCombinations=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
@@ -243,6 +244,14 @@
                 alert("O won");
             }
             playAgain();
+         }
+         function checkDraw(){
+          if(squaresFilled==9 && win==false){
+            alert("Draw");
+            location.reload(true);
+          }else{
+             playAgain();
+          }
          }
         function playAgain(){
             win=true;
@@ -275,8 +284,3 @@
         </div>
     </body>
 </html>
-
-
-
-
-
