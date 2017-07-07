@@ -170,7 +170,8 @@
                  Orandomplay();
                //checkwin('O');
          }
-          function Oplaying(can){
+          function Oplaying(canNum){
+                can="canvas"+canNum;
                 c=document.getElementById(can);
                 ctx=c.getContext("2d");
                 ctx.beginPath();
@@ -179,7 +180,8 @@
                 ctx.strokeStyle="white";
                 ctx.stroke();
                 ctx.closePath();
-                content[can]='O';
+                content[canNum-1]='O';
+                painted[canNum-1]=true;
                 turn++;
                 squaresFilled++;
                 checkwin('O');
