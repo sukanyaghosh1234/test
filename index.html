@@ -209,7 +209,10 @@
             playAgain();
          }
         function playAgain(){
+            win=true;
+            turn=0;
             y=confirm("PLAY AGAIN?");
+            
             if(y==true){
                 alert("OKAY! ^^/>");
                 location.reload(true);
