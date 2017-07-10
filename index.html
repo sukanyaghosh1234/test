@@ -13,8 +13,6 @@
         var c;
         var ctx;
         var squaresFilled = 0;
-        var w;
-        var y;
         var sq1="canvas1";
         var sq2="canvas2";
         var sq3="canvas3";
@@ -34,13 +32,12 @@
               }  
            }
            function canvasClicked(canvasNumber){
-               console.log(squaresFilled);
-               
-                    if(squaresFilled==8){
+                console.log("Player");
+                    if(squaresFilled==9){
                       turn=0;
-   
-                       alert("Game Over");
-                        location.reload();
+                      win=true;
+                      msg("Game Over!");
+                      location.reload();
                     }
                 theCanvas="canvas"+canvasNumber;
                 c=document.getElementById(theCanvas);
@@ -62,242 +59,142 @@
                         painted[canvasNumber-1]=true;
                         squaresFilled++;
                         checkwin(content[canvasNumber-1]);
-                        if(win==false || squaresFilled!=9){
+                        if(win==false || squaresFilled!=9)
                         Oplay();
-                        }
                     }
                 }
-                    else 
-                    alert("that space is already occupied");
-                
+                else 
+                alert("that space is already occupied");
            };
+
            function Oplay(){
-            win1123_sq3=((content[0]=='O'&&content[1]=='O')&&content[2]=='')
-            win1123_sq2=((content[0]=='O'&&content[2]=='O')&&content[1]=='')
-            win1123_sq1=((content[1]=='O'&&content[2]=='O')&&content[0]=='')
+            if((content[0]=='O'&&content[1]=='O')&&content[2]=='')
+              Oplaying(3);
+            else if((content[0]=='O'&&content[2]=='O')&&content[1]=='')
+              Oplaying(2);
+            else if((content[1]=='O'&&content[2]=='O')&&content[0]=='')
+              Oplaying(1);
                
-            win4456_sq6=((content[3]=='O'&&content[4]=='O')&&content[5]=='')
-            win4456_sq5=((content[3]=='O'&&content[5]=='O')&&content[4]=='')
-            win4456_sq4=((content[4]=='O'&&content[5]=='O')&&content[3]=='')
-               
-            win7789_sq9=((content[6]=='O'&&content[7]=='O')&&content[8]=='')
-            win7789_sq8=((content[6]=='O'&&content[8]=='O')&&content[7]=='')
-            win7789_sq7=((content[7]=='O'&&content[8]=='O')&&content[6]=='')
-            
-            win1147_sq7=((content[0]=='O'&&content[3]=='O')&&content[6]=='')
-            win1147_sq4=((content[0]=='O'&&content[6]=='O')&&content[3]=='')
-            win1147_sq1=((content[3]=='O'&&content[6]=='O')&&content[0]=='')
-               
-            win5528_sq8=((content[4]=='O'&&content[1]=='O')&&content[7]=='')
-            win5528_sq2=((content[4]=='O'&&content[7]=='O')&&content[1]=='')
-            win5528_sq5=((content[1]=='O'&&content[7]=='O')&&content[4]=='')
-               
-            win6693_sq3=((content[5]=='O'&&content[8]=='O')&&content[2]=='')
-            win6693_sq9=((content[5]=='O'&&content[2]=='O')&&content[8]=='')
-            win6693_sq6=((content[8]=='O'&&content[2]=='O')&&content[5]=='')
-               
-            win1159_sq9=((content[0]=='O'&&content[4]=='O')&&content[8]=='')
-            win1159_sq5=((content[0]=='O'&&content[8]=='O')&&content[4]=='')
-            win1159_sq1=((content[4]=='O'&&content[8]=='O')&&content[0]=='')
-               
-            win5573_sq3=((content[4]=='O'&&content[6]=='O')&&content[2]=='')
-            win5573_sq7=((content[4]=='O'&&content[2]=='O')&&content[6]=='')
-            win5573_sq5=((content[6]=='O'&&content[2]=='O')&&content[4]=='')
-               
-            win123_sq3=((content[0]=='X'&&content[1]=='X')&&content[2]=='')
-            win123_sq2=((content[0]=='X'&&content[2]=='X')&&content[1]=='')
-            win123_sq1=((content[1]=='X'&&content[2]=='X')&&content[0]=='')
-               
-            win456_sq6=((content[3]=='X'&&content[4]=='X')&&content[5]=='')
-            win456_sq5=((content[3]=='X'&&content[5]=='X')&&content[4]=='')
-            win456_sq4=((content[4]=='X'&&content[5]=='X')&&content[3]=='')
-               
-            win789_sq9=((content[6]=='X'&&content[7]=='X')&&content[8]=='')
-            win789_sq8=((content[6]=='X'&&content[8]=='X')&&content[7]=='')
-            win789_sq7=((content[7]=='X'&&content[8]=='X')&&content[6]=='')
-            
-            win147_sq7=((content[0]=='X'&&content[3]=='X')&&content[6]=='')
-            win147_sq4=((content[0]=='X'&&content[6]=='X')&&content[3]=='')
-            win147_sq1=((content[3]=='X'&&content[6]=='X')&&content[0]=='')
-               
-            win528_sq8=((content[4]=='X'&&content[1]=='X')&&content[7]=='')
-            win528_sq2=((content[4]=='X'&&content[7]=='X')&&content[1]=='')
-            win528_sq5=((content[1]=='X'&&content[7]=='X')&&content[4]=='')
-               
-            win693_sq3=((content[5]=='X'&&content[8]=='X')&&content[2]=='')
-            win693_sq9=((content[5]=='X'&&content[2]=='X')&&content[8]=='')
-            win693_sq6=((content[8]=='X'&&content[2]=='X')&&content[5]=='')
-               
-            win159_sq9=((content[0]=='X'&&content[4]=='X')&&content[8]=='')
-            win159_sq5=((content[0]=='X'&&content[8]=='X')&&content[4]=='')
-            win159_sq1=((content[4]=='X'&&content[8]=='X')&&content[0]=='')
-               
-            win573_sq3=((content[4]=='X'&&content[6]=='X')&&content[2]=='')
-            win573_sq7=((content[4]=='X'&&content[2]=='X')&&content[6]=='')
-            win573_sq5=((content[6]=='X'&&content[2]=='X')&&content[4]=='')
-          
-            
-            if(win123_sq3||win1123_sq3){
-             Oplaying(3);
-           } else if(win123_sq2||win123_sq2){
-            Oplaying(2);
-           }else if(win123_sq1||win123_sq1){
-            Oplaying(1);
-           }
-           else if(win456_sq6||win4456_sq6){
+           else if((content[3]=='O'&&content[4]=='O')&&content[5]=='')
             Oplaying(6);
-           }else if(win456_sq5||win4456_sq5){
-            Oplaying(5);
-           }else if(win456_sq4||win4456_sq4){
+            else if((content[3]=='O'&&content[5]=='O')&&content[4]=='')
+              Oplaying(5);
+           else if((content[4]=='O'&&content[5]=='O')&&content[3]=='')
             Oplaying(4);
-           }
-    
-           else if(win789_sq9||win7789_sq9){
-            Oplaying(9);
-           }else if(win789_sq8||win7789_sq8){
+               
+            else if((content[6]=='O'&&content[7]=='O')&&content[8]=='')
+              Oplaying(9);
+           else if((content[6]=='O'&&content[8]=='O')&&content[7]=='')
             Oplaying(8);
-           }else if(win789_sq7||win7789_sq7){
-            Oplaying(7);
-           }
-      
-             
-           else if(win147_sq7||win1147_sq7){
-            Oplaying(7);
-           }else if(win147_sq4||win1147_sq4){
-            Oplaying(4);
-           }else if(win147_sq1||win1147_sq1){
-            Oplaying(1);
-           }
-
-           else if(win528_sq8||win5528_sq8){
-            Oplaying(8);
-           }else if(win528_sq2||win5528_sq2){
-            Oplaying(2);
-           }else if(win528_sq5||win528_sq5){
-            Oplaying(5);
-           }
-           
-           else if(win693_sq3||win6693_sq3){
-            Oplaying(3);
-           }else if(win693_sq9||win6693_sq9){
-            Oplaying(9);
-           }else if(win693_sq6||win6693_sq6){
-            Oplaying(6);
-           }
-          
-            else if(win159_sq9||win1159_sq9){
-            Oplaying(9);
-           }else if(win159_sq5||win1159_sq5){
-            Oplaying(5);
-           }else if(win159_sq1||win1159_sq1){
-            Oplaying(1);
-           }
-           
-           else if(win573_sq3||win5573_sq3){
-            Oplaying(3);
-           }else if(win573_sq7||win5573_sq7){
-            Oplaying(7);
-           }else if(win573_sq5||win5573_sq5){
-            Oplaying(5);
-           }                 
-       
-           else if(win123_sq3 && win1123_sq3){
-
-                 win1123_sq3=Oplaying(3);
-           }
-            else if(win123_sq2 && win1123_sq2){
-                 win1123_sq2=Oplaying(2);
-           }else if(win123_sq1 && win1123_sq1){
-                 win1123_sq1=Oplaying(1);
-           }
+            else if((content[7]=='O'&&content[8]=='O')&&content[6]=='')
+              Oplaying(7);
             
-           else if(win456_sq6 && win4456_sq6){
-            win4456_sq6=Oplaying(6);
-           }else if(win456_sq5&&win4456_sq5){
-             win4456_sq5=Oplaying(5);
-           }else if(win456_sq4&&win4456_sq4){
-            win4456_sq4=Oplaying(4);
-           }
+            else if((content[0]=='O'&&content[3]=='O')&&content[6]=='')
+              Oplaying(7);
+           else if((content[0]=='O'&&content[6]=='O')&&content[3]=='')
+            Oplaying(4);
+            else if((content[3]=='O'&&content[6]=='O')&&content[0]=='')
+              Oplaying(1);
+               
+            else if((content[4]=='O'&&content[1]=='O')&&content[7]=='')
+              Oplaying(8);
+            else if((content[4]=='O'&&content[7]=='O')&&content[1]=='')
+              Oplaying(2);
+            else if((content[1]=='O'&&content[7]=='O')&&content[4]=='')
+              Oplaying(3);
+               
+            else if((content[5]=='O'&&content[8]=='O')&&content[2]=='')
+              Oplaying(3);
+            else if((content[5]=='O'&&content[2]=='O')&&content[8]=='')
+              Oplaying(9);
+            else if((content[8]=='O'&&content[2]=='O')&&content[5]=='')
+              Oplaying(6);
+               
+            else if((content[0]=='O'&&content[4]=='O')&&content[8]=='')
+              Oplaying(9);
+            else if((content[0]=='O'&&content[8]=='O')&&content[4]=='')
+              Oplaying(5);
+            else if((content[4]=='O'&&content[8]=='O')&&content[0]=='')
+              Oplaying(1);
+               
+            else if((content[4]=='O'&&content[6]=='O')&&content[2]=='')
+              Oplaying(3);
+            else if((content[4]=='O'&&content[2]=='O')&&content[6]=='')
+              Oplaying(7);
+            else if((content[6]=='O'&&content[2]=='O')&&content[4]=='')
+              Oplaying(5);
 
-           else if(win789_sq9&&win7789_sq9){
-             win7789_sq9=Oplaying(9);
-           }else if(win789_sq8&&win7789_sq8){
-               win7789_sq8 =Oplaying(8);
-           }else if(win789_sq7&&win7789_sq7){
-                  win7789_sq7=Oplaying(7);
-           }
-
-           else if(win147_sq7&&win1147_sq7){
-              win1147_sq7=Oplaying(7);
-           }else if(win147_sq4&&win1147_sq4){
-              win1147_sq4 =Oplaying(4);
-           }else if(win147_sq1&&win1147_sq1){
-              win1147_sq1 =Oplaying(1);
-           }
+               
+            else if((content[0]=='X'&&content[1]=='X')&&content[2]=='')
+              Oplaying(3);
+            else if((content[0]=='X'&&content[2]=='X')&&content[1]=='')
+              Oplaying(2);
+            else if((content[1]=='X'&&content[2]=='X')&&content[0]=='')
+              Oplaying(1);
           
 
-           else if(win528_sq8&&win5528_sq8){
-             win5528_sq8 =Oplaying(8);
-           }else if(win528_sq2&&win5528_sq2){
-             win5528_sq2 =Oplaying(2);
-           }else if(win528_sq5&&win5528_sq5){
-               win5528_sq5=Oplaying(5);
-           }
-    
-
-           else if(win693_sq3&&win6693_sq3){
-            win6693_sq3 =Oplaying(3);
-           }else if(win693_sq9&&win6693_sq9){
-            win6693_sq9 =Oplaying(9);
-           }else if(win693_sq6&&win6693_sq6){
-             win6693_sq6=Oplaying(6);
-           }
-
-
-            else if(win159_sq9&&win1159_sq9){
-             win1159_sq9 =Oplaying(9);
-           }else if(win159_sq5&&win1159_sq5){
-            win1159_sq5=Oplaying(5);
-           }else if(win159_sq1&&win1159_sq1){
-             win1159_sq1=Oplaying(1);
-           }
-
-           else if(win573_sq3&&win5573_sq3){
-            win5573_sq3 =Oplaying(3);
-           }else if(win573_sq7&&win5573_sq7){
-             win5573_sq7=Oplaying(7);
-           }else if(win573_sq5&&win5573_sq5){
-             win5573_sq5=Oplaying(5);
-           }    
-             
-           else{
-            Orandomplay();
-           }
-           checkwin('O');
-         }
-         function Orandomplay(){
-             if(squaresFilled!=9){
-              var randomNumber=Math.floor((Math.random()*9)+1);
-             if(painted[randomNumber-1]==false)
-             {
-                var randomSquare=("canvas"+randomNumber);
-                Oplaying(randomNumber);
-             }
-             else
-                 Orandomplay();
-               //checkwin('O');
-         }
-         }
+            else if((content[3]=='X'&&content[4]=='X')&&content[5]=='')
+              Oplaying(6);
+            else if((content[3]=='X'&&content[5]=='X')&&content[4]=='')
+              Oplaying(5);
+            else if((content[4]=='X'&&content[5]=='X')&&content[3]=='')
+              Oplaying(4);
+               
+            else if((content[6]=='X'&&content[7]=='X')&&content[8]=='')
+              Oplaying(9);
+            else if((content[6]=='X'&&content[8]=='X')&&content[7]=='')
+              Oplaying(8);
+            else if((content[7]=='X'&&content[8]=='X')&&content[6]=='')
+              Oplaying(7);
+        
+            else if((content[0]=='X'&&content[3]=='X')&&content[6]=='')
+              Oplaying(7);
+            else if((content[0]=='X'&&content[6]=='X')&&content[3]=='')
+              Oplaying(4);
+            else if((content[3]=='X'&&content[6]=='X')&&content[0]=='')
+              Oplaying(1);
+               
+            else if((content[4]=='X'&&content[1]=='X')&&content[7]=='')
+              Oplaying(8);
+            else if((content[4]=='X'&&content[7]=='X')&&content[1]=='')
+              Oplaying(2);
+            else if((content[1]=='X'&&content[7]=='X')&&content[4]=='')
+              Oplaying(5);
+               
+            else if((content[5]=='X'&&content[8]=='X')&&content[2]=='')
+              Oplaying(3);
+            else if((content[5]=='X'&&content[2]=='X')&&content[8]=='')
+              Oplaying(9);
+            else if((content[8]=='X'&&content[2]=='X')&&content[5]=='')
+              Oplaying(6);
+               
+            else if((content[0]=='X'&&content[4]=='X')&&content[8]=='')
+              Oplaying(9);
+            else if((content[0]=='X'&&content[8]=='X')&&content[4]=='')
+              Oplaying(5);
+            else if((content[4]=='X'&&content[8]=='X')&&content[0]=='')
+              Oplaying(1);
+               
+            else if((content[4]=='X'&&content[6]=='X')&&content[2]=='')
+              Oplaying(3);
+            else if((content[4]=='X'&&content[2]=='X')&&content[6]=='')
+              Oplaying(7);
+            else if((content[6]=='X'&&content[2]=='X')&&content[4]=='')
+              Oplaying(5);
+            else
+              Oplaying(Math.floor(Math.random()*9+1));
+          }
+          
           function Oplaying(canNum){
-                   if(squaresFilled==9){
-                      turn=0;
-                       
-                        alert("Game Over");
-                        location.reload();
-                    }
-               console.log("computer");
-               var can="canvas"+canNum;
-               if(painted[canNum-1]==false){
+             if(squaresFilled==9){
+                turn=0;
+                 win=true;
+                  msg("Game Over");
+                  location.reload();
+              }
+             console.log("computer");
+             var can="canvas"+canNum;
+             if(painted[canNum-1]==false && win==false){
                 c=document.getElementById(can);
                 ctx=c.getContext("2d");
                 ctx.beginPath();
@@ -310,44 +207,45 @@
                 painted[canNum-1]=true;
                 turn++;
                 squaresFilled++;
-              }
-                //checkwin('O');
+            }
+            else
+              Oplaying(Math.floor(Math.random()*9+1));
+            checkwin('O');
           }
+
+
            function checkwin(symbol){
              winningCombinations=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
              for(var a=0;a<winningCombinations.length;a++){
                 if(content[winningCombinations[a][0]]==symbol && content[winningCombinations[a][1]]==symbol &&content[winningCombinations[a][2]]==symbol){
-                  winalert(symbol);
-        }
-         }
+                  turn=0;
+                  win=true;
+                    winalert(symbol);
+                }
+              }
            } 
-             function winalert(symbol){
-               win=true;
-               if(symbol=='X'){
-                alert("X won");
-            }
-            else{
-                alert("O won");
-            }
-            playAgain();
-         }
 
-        function playAgain(){
+          function winalert(symbol){
             win=true;
             turn=0;
-            y=confirm("PLAY AGAIN?");
-            
-            if(y==true){
-                alert("OKAY! ^^/>");
+            if(symbol=='X')
+                 alert("X won");
+            else
+                alert("O won");
+            location.reload();
+         }
+
+         var msg=function(abc){
+            setInterval(function(){
+                alert(abc);
                 location.reload();
-            }
-            else{
-                alert("SO LONG");
-                location.reload();
-        }
-        }
-        </script>
-    </head>
+            },500);
+         }
+
+    </script>
+  </head>
+
+
     <body>
         <h1> <span style="color:blue">Tic</span>-<span style="color:white">Tac</span>-<span style="color:red">Toe</span> </h1>
         <div id ="box"  width="300" height="300" align="center">
@@ -363,4 +261,3 @@
         </div>
     </body>
 </html>
-
